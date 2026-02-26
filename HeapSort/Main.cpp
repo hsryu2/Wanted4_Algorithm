@@ -69,9 +69,25 @@ void HeapSort(int* array, int length)
 	}
 }
 
+// 배열 항목 출력 함수.
+void PrintArray(int* array, int length)
+{
+	for (int i = 0; i < length; i++)
+	{
+		std::cout << array[i];
+
+		// 마지막 원소 전까지는 콤마 출력.
+		if (i < length - 1)
+		{
+			std::cout << ", ";
+		}
+	}
+	std::cout << "\n";
+}
+
 int main()
 {
-	int array[] = { 5, 2, 8, 4, 1, 7, 3, 6, 9, 10, 15, 13, 14, 12, 17, 16 };
+	int array[] = { 5, 2, 8, 4, 1, 7, 3, 6, 9, 10, 15, 13, 14, 12, 11, 16 };
 	//int array[] =
 	//{
 	//	1, 58, 10, 20, 56, 63, 73, 5, 28, 37,
@@ -87,4 +103,16 @@ int main()
 	//};
 
 
+	// 배열 길이 구하기.
+	int length = _countof(array);
+
+	// 출력.
+	PrintArray(array, length);
+
+	HeapSort(array, length);
+
+	// 출력.
+	PrintArray(array, length);
+
+	std::cin.get();
 }
