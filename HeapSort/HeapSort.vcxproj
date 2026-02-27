@@ -45,11 +45,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)bin\$(Configuration)\(ProjectName)\</OutDir>
-    <IntDir>$(Platform)Intermediate\$(Configuration)\(ProjectName)\</IntDir>
+    <IntDir>$(Platform)\Intermediate\$(Configuration)\(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)bin\$(Configuration)\(ProjectName)\</OutDir>
-    <IntDir>$(Platform)Intermediate\$(Configuration)\(ProjectName)\</IntDir>
+    <IntDir>$(Platform)\Intermediate\$(Configuration)\(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
