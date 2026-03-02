@@ -1,7 +1,6 @@
 #pragma once
 
-
-// 콘솔 좌표에서 위치를 나타낼 클래스.
+// 콘솔 좌표에서 위치를 나타날 클래스.
 class Position
 {
 public:
@@ -14,18 +13,18 @@ public:
 	}
 };
 
-
 class Node
 {
 public:
 	Node(int x, int y, Node* parentNode = nullptr)
-		: position(x,y), parentNode(parentNode)
-	{ 
+		: position(x, y), parentNode(parentNode)
+	{
 	}
 
 	Position operator-(const Node& other) const
 	{
-		return Position(position.x - other.position.x,
+		return Position(
+			position.x - other.position.x,
 			position.y - other.position.y
 		);
 	}
@@ -35,6 +34,7 @@ public:
 		return position.x == other.position.x
 			&& position.y == other.position.y;
 	}
+
 public:
 	// 이 노드의 위치.
 	Position position;
@@ -45,7 +45,7 @@ public:
 	// 이 노드에서 목표지점까지의 예상 비용(휴리스틱).
 	float hCost = 0.0f;
 
-	// 최종 뵤이요 (gCost + hCost)
+	// 최종 비용(gCost+hCost)
 	float fCost = 0.0f;
 
 	// 부모 노드 링크.

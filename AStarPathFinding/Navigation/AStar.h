@@ -1,7 +1,7 @@
 #pragma once
 
-#include <vector>
 #include "Node.h"
+#include <vector>
 
 template<typename T>
 void SafeDelete(T*& t)
@@ -30,12 +30,11 @@ public:
 	AStar();
 	~AStar();
 
-	// 경로검색 호출 -> AStar가 private에 있는 메소드들을 이용해서 성공, 실패를 알림
 	// 객체 지향 이론에서 -> 메시지(Message) - 공개 멤버 함수(인터페이스).
-	// 경로 검색 함수.
-	// startNode : 시작지점.
-	// goalNode: 목표지점.
-	// grid: 탐색할 맵 (2차원 배열). -> vector<vector<int>>
+	// 경로 검색(탐색) 함수.
+	// startNode: 시작 지점.
+	// goalNode: 목표 지점.
+	// grid: 탐색할 맵 (2차원 배열).
 	std::vector<Node*> FindPath(
 		Node* startNode, Node* goalNode,
 		std::vector<std::vector<int>>& grid
@@ -44,11 +43,11 @@ public:
 	// 맵(그리드) 출력 함수.
 	void DisplayGridWithPath(
 		std::vector<std::vector<int>>& grid,
-		const std::vector<Node*> path
+		const std::vector<Node*>& path
 	);
 
 private:
-	// 객체 지향 이론에서 -> 메소드 - 비공개 멤버 함수.
+	// 객체 지향 이론에서 -> 메소드(Method) - 비공개 멤버 함수.
 
 	// 탐색을 완료한 후에 최적 경로 반환하는 함수.
 	// 부모링크를 따라가면서 역추적.
@@ -66,7 +65,7 @@ private:
 
 	// 탐색하려는 노드가 목표 노드인지 확인하는 함수.
 	bool IsDestination(const Node* const node);
-	
+
 	// 그리드 출력 함수.
 	void DisplayGrid(std::vector<std::vector<int>>& grid);
 
@@ -83,4 +82,3 @@ private:
 	// 목표 노드.
 	Node* goalNode = nullptr;
 };
-
